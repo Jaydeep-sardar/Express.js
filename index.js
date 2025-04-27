@@ -1,9 +1,9 @@
 import express from "express";
-const app =express();
+const app = express();
 
-//string pattern path
-app.get("/ab?cd",(req,res)=>{
-    res.send("if user hit(acd) or (abcd) then this will run");
+// route using regex
+app.get(/^\/ab?cd$/, (req, res) => {
+    res.send("if user hits (acd) or (abcd), this will run");
 });
 
-app.listen(8000,()=> console.log("server up!"));
+app.listen(8000, () => console.log("server up!"));
