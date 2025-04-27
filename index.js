@@ -1,28 +1,8 @@
 import express from "express";
+import students from "./routes/student.js";
+import teachers from "./routes/teacher.js"
 const app = express();
 
-/*app.get("/student",(req,res)=>{
-    res.send("all students");
-});
-//for running after first code block ,we need to install postman
-app.post("/student",(req,res)=>{
-    res.send("add new students");
-});
-app.put("/student",(req,res)=>{
-    res.send("update students");
-});
-app.delete("/student",(req,res)=>{
-    res.send("delete students");
-});//
-
-app.listen(8000, () => console.log("server up!"));
-*/
-
-//rafraction of the code
-app.route('/student')
-.get((req,res) => res.send("all student"))
-.post((req,res) => res.send("add new student"))
-.put((req,res) => res.send("update student"))
-.delete((req,res) => res.send("delete student"))
-
+app.use("/teachers",teachers);
+app.use ("/students",students);
 app.listen(8000, () => console.log("server up!"));
