@@ -10,6 +10,7 @@ app.get('/ecom/products/iphone/:model',(req,res)=>{
 
 /* app.params("id",(req,res,next,id)=>{
     console.log(`id :${id}`);
+    next();
     });
     app.get("/user/:id",(req,res)=>{
         console.log("this is user is path");
