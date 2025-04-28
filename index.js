@@ -1,20 +1,7 @@
 import express from "express";
+import students from './routes/student.js'
 const app = express();
-//route params
-app.get('/student/delete/:id',(req,res)=>{
-    res.send(req.params.id);
-});
-app.get('/ecom/products/iphone/:model',(req,res)=>{
-    res.send("iphone" ,req.params.model);
-});
 
-/* app.params("id",(req,res,next,id)=>{
-    console.log(`id :${id}`);
-    next();
-    });
-    app.get("/user/:id",(req,res)=>{
-        console.log("this is user is path");
-        res.send("response ok");
-        }); */
+app.use('/students',students);
 
 app.listen(8000, () => console.log("server up!"));
