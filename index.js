@@ -1,7 +1,9 @@
 import express from "express";
-import students from './routes/student.js'
 const app = express();
 
-app.use('/students',students);
+//query string
+app.get('/product',(req,res)=>{
+    res.send(`response OK ${req.query.category}`);
+});
 
 app.listen(8000, () => console.log("server up!"));
