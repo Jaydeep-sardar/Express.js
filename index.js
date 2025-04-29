@@ -1,17 +1,9 @@
 import express from "express";
-import path from 'path'
-import products from "./products,js";
+import {join} from 'path'
+import route from"./routes/route.js"
 const app = express();
 
-app.use(express.static())
-
-app.get('/',(req,res)=>{
-    res.sendFile(path.join(process.cwd(), "./public/index.html"));
-});
-
-//sending json
-app.get('/products',(req,res)=>{
-    res.json(products)
-})
-
+app .set ('view engine' ,"ejs")
+app.use(express.static(join(process.cwd(),"public")))
+app.use("/",route);
 app.listen(8000, () => console.log("server up!"));
