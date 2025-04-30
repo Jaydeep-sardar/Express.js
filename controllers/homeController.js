@@ -1,5 +1,9 @@
 const homeController =(req,res)=>{
-    res.render("index");
+    const data ={
+        name :"EJS",
+        userId:20,
+    };
+    res.render("index",data);
 };
 
 export {homeController};

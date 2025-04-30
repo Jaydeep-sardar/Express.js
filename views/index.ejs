@@ -5,9 +5,17 @@
     <title>Home</title>
 </head>
 <body>
-    <h1>Home</h1>
-    <h5>
-        this is home page
-    </h5>
+    <!--display variable-->
+    <%=name%>
+
+    <!--conditional statement-->\
+    <%if(userId ===20){ %>
+        <h1>User ID:<%userId%></h1>
+        <% } else if (userId ===40){%>
+            <h2>userId:<%userId%></h2>
+            <%} else {%>
+                <h1>nothing..</h1>
+                <%}%>
+    
 </body>
 </html>
